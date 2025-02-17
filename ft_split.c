@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 22:03:56 by lmarcucc          #+#    #+#             */
-/*   Updated: 2025/01/29 16:24:23 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:33:57 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	**ft_split(const char *str, int c)
 	int		words;
 	char	**res;
 
+	if (!str)
+		return (NULL);
 	words = ft_count_words(str, c);
 	res = ft_calloc(words + 1, sizeof(char *));
 	if (!res)
