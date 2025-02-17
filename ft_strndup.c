@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:03:37 by lmarcucc          #+#    #+#             */
-/*   Updated: 2025/01/06 16:10:30 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:16:37 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strndup(const char *s, int len)
 
 	res = ft_calloc(len + 1, sizeof(char));
 	if (!res)
-		return (perror("malloc fail ft_strndup"), NULL);
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{

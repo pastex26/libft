@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:47:34 by lmarcucc          #+#    #+#             */
-/*   Updated: 2024/12/12 17:36:41 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:24:27 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ long int	ft_atol_base(const char *nptr, const char *base)
 	size_t			i;
 
 	if (!check_base(base))
-		return (ft_printf("bad base\n"), 0);
+		return (write(2, "ft_atol_base: non valid base\n", 30), 0);
 	res = 0;
 	sign = 1;
 	i = 0;

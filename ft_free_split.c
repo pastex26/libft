@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 19:22:35 by lmarcucc          #+#    #+#             */
-/*   Updated: 2025/01/01 19:30:40 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:28:14 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	ft_free_split(char **tab)
 		ft_free(tab[i]);
 		i++;
 	}
-	free(tab);
+	ft_free(tab);
 }

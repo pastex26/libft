@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:52:30 by lmarcucc          #+#    #+#             */
-/*   Updated: 2025/01/06 14:09:41 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:13:15 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strjoin_all(size_t	str_nb, ...)
 	while (i < str_nb)
 	{
 		res = ft_strjoin_free(res, va_arg(args, char *));
+		if (!res)
+			return (NULL);
 		i++;
 	}
 	va_end(args);

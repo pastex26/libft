@@ -3,38 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 16:12:11 by lucas             #+#    #+#             */
-/*   Updated: 2024/12/04 09:09:05 by lucas            ###   ########.fr       */
+/*   Updated: 2025/02/17 11:08:13 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstdup(const t_list *lst, size_t size)
+t_list	*ft_lstdup(const t_list *lst, void (*del)(void*))
 {
-	t_list	*res;
+	t_list	*dup;
 	t_list	*new;
 	void	*new_content;
 
 	if (!lst)
 		return (NULL);
-	res = NULL;
+	dup = NULL;
 	while (lst)
 	{
-		new_content = ft_calloc(1, size);
-		if (!new_content)
-			return (ft_lstclear(&res, free), NULL);
-		ft_memcpy(new_content, lst->content, size);
+		new_content = NULL;
+		if (lst->content)
+			new_content = malloc(sizeof(lst->content));
+		ft_memcpy(new_content, lst->content, sizeof(lst->content));
 		new = ft_lstnew(new_content);
 		if (!new)
-		{
-			free(new_content);
-			return (ft_lstclear(&res, free), NULL);
-		}
-		ft_lstadd_back(&res, new);
+			return (free(new_content), ft_lstclear(&dup, del), NULL);
+		ft_lstadd_back(&dup, new);
 		lst = lst->next;
 	}
-	return (res);
+	return (dup);
 }
