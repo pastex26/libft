@@ -6,7 +6,7 @@
 /*   By: lmarcucc <lucas@student.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 22:11:12 by lmarcucc          #+#    #+#             */
-/*   Updated: 2025/01/30 10:58:40 by lmarcucc         ###   ########.fr       */
+/*   Updated: 2025/02/14 13:48:11 by lmarcucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int					ft_putnbr_base_fd(long long int n, char *base, int fd);
 
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
+//check if is alpha
 t_bool				ft_isalpha(int c);
 t_bool				ft_isdigit(int c);
 t_bool				ft_isalnum(int c);
